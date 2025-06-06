@@ -1,0 +1,7 @@
+---
+- name: Probar conectividad con los hosts
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Hacer ping a los hosts
+      ping:
