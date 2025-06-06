@@ -1,0 +1,12 @@
+---
+- name: Mostrar el usuario remoto (whoami)
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Ejecutar whoami en el host remoto
+      command: whoami
+      register: resultado
+
+    - name: Mostrar el resultado de whoami
+      debug:
+        msg: "Usuario remoto: {{ resultado.stdout }}"
